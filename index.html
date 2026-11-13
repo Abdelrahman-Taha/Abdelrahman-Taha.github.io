@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdelrahman Taha Resume</title>
+<meta name="description" content="Senior wireless R&amp;D engineer (Ph.D.) — indoor positioning, RF digital twins, RIS, wireless sensing, deep learning for wireless.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6fb; --paper:#ffffff; --ink:#18202f; --ink-2:#4a556b; --ink-3:#7a849a;
+  --line:#e3e7f0; --accent:#2f5bea; --accent-2:#0fb5a6; --accent-3:#f2994a; --accent-4:#a259ff;
+  --chip:#eef2ff; --chip-ink:#2a3f9e; --tile:#f7f9ff;
+  --hero-a:#1d3fb8; --hero-b:#0f9e93; --hero-ink:#ffffff;
+  --todo-bg:#fff4c2; --todo-ink:#7a5a00; --todo-line:#f0c94a;
+  --shadow:0 10px 30px rgba(24,32,47,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d111a; --paper:#151b27; --ink:#e8ecf5; --ink-2:#b2bbcf; --ink-3:#7f8aa3;
+    --line:#263045; --accent:#7c9bff; --accent-2:#3fd6c6; --accent-3:#ffb070; --accent-4:#c39bff;
+    --chip:#1e2840; --chip-ink:#b9c8ff; --tile:#1a2232;
+    --hero-a:#22357f; --hero-b:#0b6d66; --hero-ink:#ffffff;
+    --todo-bg:#3a3110; --todo-ink:#ffe08a; --todo-line:#7a6420;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d111a; --paper:#151b27; --ink:#e8ecf5; --ink-2:#b2bbcf; --ink-3:#7f8aa3;
+  --line:#263045; --accent:#7c9bff; --accent-2:#3fd6c6; --accent-3:#ffb070; --accent-4:#c39bff;
+  --chip:#1e2840; --chip-ink:#b9c8ff; --tile:#1a2232;
+  --hero-a:#22357f; --hero-b:#0b6d66; --hero-ink:#ffffff;
+  --todo-bg:#3a3110; --todo-ink:#ffe08a; --todo-line:#7a6420;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.page{max-width:900px;margin:32px auto;background:var(--paper);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+
+/* ---------- hero ---------- */
+.hero{position:relative;color:var(--hero-ink);padding:36px 40px 30px;background:linear-gradient(120deg,var(--hero-a),var(--hero-b));overflow:hidden}
+.hero svg.waves{position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none}
+.hero h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.02em;position:relative}
+.hero .role{margin:4px 0 16px;font-size:16px;font-weight:500;opacity:.92;position:relative}
+.hero .role .kw{display:block;margin-top:2px;font-size:14.5px;font-weight:400;opacity:.9}
+.contact{display:flex;flex-wrap:wrap;gap:8px 18px;position:relative;font-size:14px}
+.contact a,.contact span{color:var(--hero-ink);display:inline-flex;align-items:center;gap:6px}
+.contact svg{width:16px;height:16px;flex:none}
+.badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.18);font-size:12px;font-weight:600;vertical-align:middle}
+
+main{padding:28px 40px 36px}
+.summary{font-size:15.5px;color:var(--ink-2);margin:0 0 20px}
+.summary strong{color:var(--ink)}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 8px}
+.stat{background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;transition:transform .2s ease, box-shadow .2s ease}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.stat .num{font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.stat .lbl{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+.stat:nth-child(1) .num{color:var(--accent)}
+.stat:nth-child(2) .num{color:var(--accent-2)}
+.stat:nth-child(3) .num{color:var(--accent-3)}
+.stat:nth-child(4) .num{color:var(--accent-4)}
+
+/* ---------- sections ---------- */
+section{margin-top:28px}
+h2{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+h2 .ico{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--chip);color:var(--accent)}
+h2 .ico svg{width:16px;height:16px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.entry{position:relative;padding:0 0 16px 20px;border-left:2px solid var(--line);margin-left:6px}
+.entry:last-child{padding-bottom:4px}
+.entry::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+.entry.alt::before{border-color:var(--accent-2)}
+.entry.warm::before{border-color:var(--accent-3)}
+.entry-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;align-items:baseline}
+.entry-title{font-weight:700;font-size:15.5px}
+.entry-org{color:var(--ink-2);font-weight:500}
+.when{font:500 12.5px/1.4 "JetBrains Mono",ui-monospace,Consolas,monospace;color:var(--ink-3);white-space:nowrap}
+ul{margin:6px 0 0;padding-left:18px}
+li{margin:3px 0}
+li::marker{color:var(--accent)}
+.sub{margin-top:10px;font-weight:600;font-size:14.5px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px}
+.sponsor{margin:0;font-size:13.5px;color:var(--ink-3)}
+.courses{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+.courses ul{margin-top:4px}
+.muted{color:var(--ink-3)}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 16px;align-items:start}
+.skills .k{font-weight:600;font-size:13.5px;color:var(--ink-2);padding-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--chip);color:var(--chip-ink);border-radius:999px;padding:3px 11px;font-size:13px;font-weight:500;transition:transform .15s ease}
+.chip:hover{transform:scale(1.06)}
+
+/* ---------- charts ---------- */
+.figure{background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:14px 16px 10px;margin:4px 0 12px}
+.figure .cap{font-size:12.5px;color:var(--ink-3);margin:0 0 6px}
+.figure svg{display:block;width:100%;height:auto}
+.figure svg text{font-family:Inter,"Segoe UI",system-ui,sans-serif}
+.tl-bar{transition:opacity .2s ease}
+.tl-bar:hover{opacity:.8}
+@media (prefers-reduced-motion:no-preference){
+  .grow{transform-origin:left center;transform-box:fill-box;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+  .grow.d2{animation-delay:.1s}.grow.d3{animation-delay:.2s}.grow.d4{animation-delay:.3s}.grow.d5{animation-delay:.4s}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+
+/* ---------- publications ---------- */
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{display:grid;grid-template-columns:38px 1fr;gap:8px;margin:0 0 8px;font-size:14px;color:var(--ink-2)}
+.pubs .tag{font:600 12px/1.9 "JetBrains Mono",ui-monospace,Consolas,monospace;color:var(--accent);background:var(--chip);border-radius:6px;text-align:center;height:22px}
+.pubs b{color:var(--ink)}
+.pubs .venue{font-style:italic}
+.cite{display:inline-block;font-size:11.5px;font-weight:600;color:var(--accent-3);border:1px solid currentColor;border-radius:999px;padding:0 7px;margin-left:4px;white-space:nowrap}
+.star{color:#fff;background:var(--accent-3);border-color:var(--accent-3)}
+.pubgroup{font-weight:700;font-size:13.5px;margin:14px 0 8px;color:var(--ink)}
+.note{font-size:12.5px;color:var(--ink-3);margin-top:4px}
+
+/* ---------- awards ---------- */
+.awards{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:14px}
+.awards .when{text-align:right}
+.awards b{color:var(--ink)}
+
+.cols2{columns:2;column-gap:28px}
+.cols2 li{break-inside:avoid}
+
+/* ---------- placeholders to fill in ---------- */
+/* (no placeholders in this version) */
+
+footer{padding:14px 40px 22px;color:var(--ink-3);font-size:12px;border-top:1px solid var(--line)}
+
+/* ---------- responsive ---------- */
+@media (max-width:720px){
+  body{font-size:14.5px}
+  .page{margin:0;border-radius:0}
+  .hero{padding:26px 16px 22px}
+  .hero h1{font-size:27px}
+  main{padding:20px 16px 28px}
+  footer{padding:14px 16px 20px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .skills{grid-template-columns:1fr;gap:4px}
+  .skills .k{padding-top:8px}
+  .cols2{columns:1}
+  .courses{grid-template-columns:1fr}
+  .courses ul+ul{margin-top:0}
+  .awards{grid-template-columns:1fr}
+  .awards .when{text-align:left;margin-top:-4px;margin-bottom:6px}
+  .figure.tl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .figure.tl svg{min-width:600px}
+  p.tl-hint{display:block}
+  .cite-d{display:none!important}
+  .cite-m{display:block!important;max-width:360px}
+}
+.figure svg.cite-m{display:none}
+.tl-hint{display:none;font-size:12px;color:var(--ink-3);margin:-6px 0 12px}
+/* no sticky hover effects on touch screens */
+@media (hover:none){
+  .stat:hover{transform:none;box-shadow:none}
+  .chip:hover{transform:none}
+  .tl-bar:hover{opacity:1}
+}
+
+/* ---------- print ---------- */
+@media print{
+  :root{
+    --bg:#fff; --paper:#fff; --ink:#111; --ink-2:#333; --ink-3:#666; --line:#d9dce3;
+    --accent:#1d4ed8; --accent-2:#0d8f84; --accent-3:#c86a15; --accent-4:#7c3aed;
+    --chip:#eef2ff; --chip-ink:#1e3a8a; --tile:#f8f9fc;
+    --hero-a:#1d3fb8; --hero-b:#0f9e93;
+  }
+  @page{size:Letter;margin:12mm 12mm}
+  body{font-size:8.6pt;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  li{margin:1px 0}
+  ul{margin-top:3px}
+  .entry{padding-bottom:8px}
+  .entry-title{font-size:9.6pt}
+  .when{font-size:8pt}
+  .sub{margin-top:5px;font-size:9pt}
+  .sponsor{font-size:8.4pt}
+  .summary{font-size:9pt;margin-bottom:10px}
+  .hero h1{font-size:22pt}
+  .hero .role{font-size:10pt;margin-bottom:8px}
+  .hero .role .kw{font-size:9pt;margin-top:1px}
+  .contact{font-size:8.6pt}
+  .stats{gap:8px}
+  .stat{padding:7px 10px}
+  .stat .num{font-size:15pt}
+  .stat .lbl{font-size:7.8pt}
+  h2{margin-bottom:8px;font-size:8.5pt}
+  h2 .ico{width:20px;height:20px}
+  .figure{padding:8px 12px 6px;margin-bottom:8px}
+  .figure.tl svg{max-height:110px}
+  .figure:not(.tl) svg{max-height:120px}
+  .pubs li{font-size:8.4pt;margin-bottom:4px;grid-template-columns:30px 1fr}
+  .pubs .tag{font-size:7.5pt;height:16px;line-height:16px}
+  .pubgroup{margin:8px 0 4px;font-size:9pt}
+  .chip{font-size:8pt;padding:1px 8px}
+  .skills{grid-template-columns:110px 1fr;gap:5px 12px}
+  .skills .k{font-size:8.6pt;padding-top:1px}
+  .awards{font-size:8.6pt;gap:3px 16px}
+  h2 + *{break-before:avoid}
+  .page{margin:0;max-width:none;box-shadow:none;border-radius:0}
+  .hero{padding:18px 22px 16px}
+  main{padding:14px 4px 0}
+  section{margin-top:12px}
+  .no-print{display:none !important}
+  .grow{animation:none !important}
+  .entry,.pubs li,.figure,.stat{break-inside:avoid}
+  h2{break-after:avoid}
+  section:has(> .skills),section:has(> .awards){break-inside:avoid}
+  footer{display:none}
+  a{color:inherit}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <svg class="waves" viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="none" stroke="#fff" stroke-width="1.5">
+        <circle cx="820" cy="40" r="40"/><circle cx="820" cy="40" r="80"/><circle cx="820" cy="40" r="120"/>
+        <circle cx="820" cy="40" r="160"/><circle cx="820" cy="40" r="200"/><circle cx="820" cy="40" r="240"/>
+        <path d="M0 180 Q 60 150 120 180 T 240 180 T 360 180 T 480 180 T 600 180 T 720 180 T 840 180 T 960 180"/>
+        <path d="M0 200 Q 60 175 120 200 T 240 200 T 360 200 T 480 200 T 600 200 T 720 200 T 840 200 T 960 200" opacity=".6"/>
+      </g>
+    </svg>
+    <h1>Abdelrahman Taha<span class="badge">Ph.D.</span></h1>
+    <p class="role">Senior Engineer, Wireless R&amp;D<span class="kw">Indoor Positioning · RF Digital Twins · RIS · Wireless Sensing · Deep Learning for Wireless</span></p>
+    <div class="contact">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Diego, CA</span>
+      <a href="mailto:abdelrahman.anis@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>abdelrahman.anis@gmail.com</a>
+      <a href="https://scholar.google.com/citations?user=qq68SQEAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>Google Scholar</a>
+      <a href="https://www.linkedin.com/in/abdelrahmanataha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
+      <a href="https://github.com/Abdelrahman-Taha" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7z"/></svg>IEEE Member</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= SUMMARY ================= -->
+    <p class="summary">
+      <strong>Senior wireless R&amp;D engineer at Qualcomm</strong> with a Ph.D. in Electrical Engineering and 10+ years in signal processing and communications.
+      Developed <strong>indoor, vertical, and self-positioning</strong> solutions with over-the-air (OTA) evaluation, as well as an <strong>RF/vision digital-twin generation pipeline</strong>.
+      Graduate research in <strong>reconfigurable intelligent surfaces</strong>, <strong>mmWave/massive MIMO</strong>, and <strong>deep learning for wireless communication and sensing systems</strong>, with 1,500+ citations; co-author of the DeepMIMO and DeepVerse 6G datasets.
+    </p>
+
+    <!-- ================= STATS ================= -->
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><div class="num">1,500+</div><div class="lbl">Google Scholar citations</div></div>
+      <div class="stat" role="listitem"><div class="num">1 + 3</div><div class="lbl">Granted U.S. patent + Qualcomm U.S. patent applications</div></div>
+      <div class="stat" role="listitem"><div class="num">8 + 2</div><div class="lbl">Peer-reviewed papers + public DL datasets</div></div>
+      <div class="stat" role="listitem"><div class="num">40+</div><div class="lbl">Papers reviewed for IEEE venues</div></div>
+    </div>
+
+    <!-- ================= TIMELINE ================= -->
+    <section aria-labelledby="h-journey">
+      <h2 id="h-journey"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12h18"/><circle cx="6" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="18" cy="12" r="2"/></svg></span>Career at a glance</h2>
+      <div class="figure tl">
+        <svg viewBox="0 0 740 160" role="img" aria-label="Timeline: B.Sc. Ain Shams 2009 to 2013; M.Sc. and teaching assistant at Ain Shams 2013 to 2018; Ph.D. and research associate at Arizona State 2018 to 2023; internships at InterDigital 2020 and Qualcomm 2021; Senior Engineer at Qualcomm since 2023.">
+          <!-- grid: x = 40 + (year-2009)*38 -->
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="40" y1="8" x2="40" y2="128"/><line x1="192" y1="8" x2="192" y2="128"/><line x1="382" y1="8" x2="382" y2="128"/>
+            <line x1="572" y1="8" x2="572" y2="128"/><line x1="686" y1="8" x2="686" y2="128"/>
+          </g>
+          <!-- row labels -->
+          <g font-size="10.5" fill="var(--ink-3)" font-weight="600">
+            <text x="40" y="12">EDUCATION</text>
+            <text x="40" y="52">ACADEMIC ROLES</text>
+            <text x="40" y="92">INDUSTRY</text>
+          </g>
+          <!-- education -->
+          <g class="tl-bar"><rect class="grow" x="40" y="16" width="171" height="22" rx="6" fill="var(--accent)"/>
+            <text x="50" y="31" font-size="11.5" fill="#fff" font-weight="600">B.Sc. EE · Ain Shams</text></g>
+          <g class="tl-bar"><rect class="grow d2" x="221" y="16" width="174" height="22" rx="6" fill="var(--accent)" opacity=".8"/>
+            <text x="231" y="31" font-size="11.5" fill="#fff" font-weight="600">M.Sc. EE · Ain Shams</text></g>
+          <g class="tl-bar"><rect class="grow d3" x="405" y="16" width="176" height="22" rx="6" fill="var(--accent)" opacity=".65"/>
+            <text x="415" y="31" font-size="11.5" fill="#fff" font-weight="600">Ph.D. EE · Arizona State</text></g>
+          <!-- academic roles -->
+          <g class="tl-bar"><rect class="grow d2" x="234" y="56" width="161" height="22" rx="6" fill="var(--accent-2)"/>
+            <text x="244" y="71" font-size="11.5" fill="#fff" font-weight="600">Teaching + Research Asst.</text></g>
+          <g class="tl-bar"><rect class="grow d3" x="405" y="56" width="166" height="22" rx="6" fill="var(--accent-2)" opacity=".8"/>
+            <text x="415" y="71" font-size="11.5" fill="#fff" font-weight="600">Graduate Research Assoc.</text></g>
+          <!-- industry -->
+          <g class="tl-bar"><rect class="grow d4" x="477" y="96" width="22" height="22" rx="5" fill="var(--accent-3)"/></g>
+          <g class="tl-bar"><rect class="grow d4" x="506" y="96" width="12" height="22" rx="4" fill="var(--accent-3)" opacity=".75"/></g>
+          <text x="440" y="113" font-size="10.5" fill="var(--ink-2)" text-anchor="end">InterDigital · Qualcomm interns</text>
+          <g class="tl-bar"><rect class="grow d5" x="572" y="96" width="114" height="22" rx="6" fill="var(--accent-4)"/>
+            <text x="582" y="111" font-size="11.5" fill="#fff" font-weight="600">Qualcomm</text></g>
+          <!-- now marker -->
+          <circle cx="686" cy="107" r="5" fill="var(--accent-4)"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/></circle>
+          <!-- axis -->
+          <line x1="40" y1="130" x2="724" y2="130" stroke="var(--ink-3)" stroke-width="1"/>
+          <g font-size="11" fill="var(--ink-3)" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace">
+            <text x="40" y="147">2009</text><text x="192" y="147">2013</text><text x="382" y="147">2018</text><text x="572" y="147">2023</text><text x="686" y="147">now</text>
+          </g>
+        </svg>
+      </div>
+      <p class="tl-hint">Swipe the timeline sideways to see all years →</p>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section aria-labelledby="h-exp">
+      <h2 id="h-exp"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span>Professional Experience</h2>
+
+      <div class="entry warm">
+        <div class="entry-head">
+          <div><span class="entry-title">Senior Engineer – Wireless Research &amp; Development (WRD)</span> · <span class="entry-org">Qualcomm, San Diego, CA</span></div>
+          <span class="when">Jan 2023 – Present</span>
+        </div>
+        <ul>
+          <li>Led the development and over-the-air (OTA) evaluation of a <b>multimodal (RF + vision) indoor self-positioning</b> solution, improving accuracy while reducing complexity.</li>
+          <li>Led the development and OTA evaluation of <b>Wi-Fi-based and barometer-based vertical positioning</b> and floor classification across multiple venues, using multi-floor OTA measurements.</li>
+          <li>Leading the development of a <b>multi-technology fusion</b> solution for robust floor classification in challenging conditions, built on real-world measurements and in close collaboration with cross-functional teams.</li>
+          <li>Developed and progressively automated an <b>RF/vision digital-twin generation pipeline</b>, from environment models to calibrated channel data, enabling efficient evaluations that readily incorporate antenna, polarization, and orientation variations. Adopted by several teams across multiple research programs.</li>
+          <li>Led the development of digital-twin-assisted indoor positioning solutions and evaluated their robustness to imperfect information, such as inaccurate access-point locations.</li>
+          <li>Led digital-twin-assisted <b>RF coverage and energy-harvesting</b> studies for low-power IoT devices, evaluating antenna patterns, polarization, fixed and random device orientations, frequency, and deployment configurations.</li>
+          <li>Co-developed deep-learning-aided Wi-Fi indoor positioning solutions, from algorithm design to <b>real-time prototype</b>, as part of a cross-functional team.</li>
+          <li>Enabled positioning and sensing efforts across multiple teams by providing digital-twin and multimodal OTA datasets and transferring digital-twin know-how.</li>
+          <li>Tools: ray tracing, channel synthesis, signal processing, sensor fusion, indoor positioning, and deep learning. Frameworks: Python, MATLAB, Wireless InSite, and Blender.</li>
+          <li>Inventor on <b>three Qualcomm U.S. non-provisional patent applications</b>.</li>
+        </ul>
+      </div>
+
+      <div class="entry warm">
+        <div class="entry-head">
+          <div><span class="entry-title">Summer Research Intern – Wireless Research &amp; Development (WRD)</span> · <span class="entry-org">Qualcomm, San Diego, CA</span></div>
+          <span class="when">May 2021 – Jul 2021</span>
+        </div>
+        <ul>
+          <li>Developed a deep-learning-aided cooperative wireless communication framework for object detection and localization.</li>
+          <li>Tools: signal processing, millimeter wave MIMO, and deep learning. Frameworks: Wireless InSite and MATLAB.</li>
+        </ul>
+      </div>
+
+      <div class="entry warm">
+        <div class="entry-head">
+          <div><span class="entry-title">Summer and Fall Research Intern – Research and Innovation (R&amp;I)</span> · <span class="entry-org">InterDigital, Conshohocken, PA</span></div>
+          <span class="when">Jul 2020 – Jan 2021</span>
+        </div>
+        <ul>
+          <li>Developed a feasible <b>zero-energy air interface</b> for IoT devices with limited-capacity batteries.</li>
+          <li>Tools: signal processing and stochastic geometry. Framework: MATLAB.</li>
+          <li>Publication: one published conference paper.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section aria-labelledby="h-edu">
+      <h2 id="h-edu"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></span>Education</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Doctor of Philosophy in Electrical Engineering</span> · <span class="entry-org">Arizona State University, Tempe, AZ</span></div>
+          <span class="when">Spring 2023</span>
+        </div>
+        <ul>
+          <li>Signal processing and communications systems – Advisor: Prof. Ahmed Alkhateeb.</li>
+          <li>Dissertation: “Reconfigurable Intelligent Surfaces for Next-Generation Communication and Sensing Systems.”</li>
+          <li>Cumulative GPA: 3.87/4.00.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Master of Science in Electrical Engineering</span> · <span class="entry-org">Ain Shams University, Cairo, Egypt</span></div>
+          <span class="when">Spring 2018</span>
+        </div>
+        <ul>
+          <li>Thesis: “Multi-layer Precoding for FDD Massive MIMO Systems.”</li>
+          <li>Cumulative GPA: 3.87/4.00.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Bachelor of Science in Electrical Engineering</span> · <span class="entry-org">Ain Shams University, Cairo, Egypt</span></div>
+          <span class="when">Spring 2013</span>
+        </div>
+        <ul>
+          <li>Thesis: “Prototyping Cognitive Radio Networks: Access and Routing Protocols.”</li>
+          <li>Department GPA: 3.99/4.00. Cumulative GPA: 3.95/4.00. <b>B.Sc. valedictorian.</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH ================= -->
+    <section aria-labelledby="h-res">
+      <h2 id="h-res"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4 19a1.5 1.5 0 0 0 1.3 2h13.4A1.5 1.5 0 0 0 20 19l-6-10V3"/></svg></span>Research Experience</h2>
+
+      <div class="entry alt">
+        <div class="entry-head">
+          <div><span class="entry-title">Graduate Research Associate</span> · <span class="entry-org">Arizona State University, Tempe, AZ</span></div>
+          <span class="when">Sep 2018 – Jan 2023</span>
+        </div>
+        <div class="sub">Project: DeepVerse 6G: A Framework for Synthetic Multi-Modal Sensing and Communication Datasets <span class="when muted">May 2022 – Jan 2023</span></div>
+        <ul>
+          <li>Co-authored the DeepVerse 6G generators and scenarios.</li>
+          <li>Co-developed the DeepVerse 6G website.</li>
+          <li>Publication: one journal article in preparation.</li>
+        </ul>
+        <div class="sub">Project: DeepMIMO: A Generic Deep Learning Dataset for mmWave and Massive MIMO Systems <span class="when muted">Apr 2021 – Apr 2022</span></div>
+        <ul>
+          <li>Co-authored the second version of the DeepMIMO generators and scenarios.</li>
+          <li>Co-developed the DeepMIMO website.</li>
+        </ul>
+        <div class="sub">Project: AI Powered Wireless Sensing for Virtual/Augmented Reality Applications <span class="when muted">Apr 2021 – Mar 2022</span></div>
+        <p class="sponsor">Sponsor: Meta (formerly Facebook)</p>
+        <ul>
+          <li>Co-developed and evaluated FMCW radar-based facial expression detection and classification prototype solutions using real-world data.</li>
+        </ul>
+        <div class="sub">Project: Wireless mmWave Sensing and RGB-D Processing for Virtual/Augmented Reality <span class="when muted">Apr 2019 – Jul 2020</span></div>
+        <p class="sponsor">Sponsor: Meta (formerly Facebook)</p>
+        <ul>
+          <li>Proposed a general communication-constrained mmWave MIMO depth map construction framework.</li>
+          <li>Developed a depth-map suitable sensing beamforming codebook for efficient depth map construction.</li>
+          <li>Developed a novel signal processing approach for building high-resolution depth maps.</li>
+          <li>Publication: one published journal article.</li>
+        </ul>
+        <div class="sub">Project: Reconfigurable Intelligent Surfaces for Next-Generation Communication and Sensing Systems <span class="when muted">Sep 2018 – Jan 2023</span></div>
+        <ul>
+          <li>Solved a critical channel estimation challenge in enabling reconfigurable intelligent surfaces for mmWave and massive MIMO systems using three distinct approaches: compressive sensing based approach, deep supervised learning based approach, and deep reinforcement learning based approach.</li>
+          <li>Addressed a critical mobility challenge in FDD massive MIMO systems, by leveraging machine learning tools.</li>
+          <li>Developed two downlink situation-aware beam prediction solutions, with a low-training-overhead prediction process and a spectral efficiency robustness against high levels of uncertainty in the user location.</li>
+          <li>Developed a sensing framework for scene depth estimation using RIS-aided wireless sensing systems.</li>
+          <li>Publications: one published journal article and four published conference papers.</li>
+        </ul>
+      </div>
+
+      <div class="entry alt">
+        <div class="entry-head">
+          <div><span class="entry-title">Graduate Research Assistant</span> · <span class="entry-org">Ain Shams University, Cairo, Egypt</span></div>
+          <span class="when">Jun 2016 – Aug 2018</span>
+        </div>
+        <div class="sub">Project: Multi-layer precoding for FDD Massive MIMO Systems</div>
+        <ul>
+          <li>Developed a spectral efficiency optimization with low-overhead weighted graph coloring based multi-layer precoding.</li>
+          <li>Publications: one published conference paper and the M.Sc. thesis.</li>
+        </ul>
+      </div>
+
+      <div class="entry alt">
+        <div class="entry-head">
+          <div><span class="entry-title">Undergraduate Research Assistant</span> · <span class="entry-org">Otto-von-Guericke-University Magdeburg, Magdeburg, Germany</span></div>
+          <span class="when">Jul 2012 – Aug 2012</span>
+        </div>
+        <div class="sub">Project: Indoor Positioning System (IPS) prototyping</div>
+        <ul>
+          <li>Prototyped channel phase noise estimation approaches for OFDM IPS systems, using USRP-2 modules.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section aria-labelledby="h-pubs">
+      <h2 id="h-pubs"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h6M8 8h5"/></svg></span>Publications</h2>
+
+      <div class="figure">
+        <p class="cap">Most-cited work · 1,500+ total citations on <a href="https://scholar.google.com/citations?user=qq68SQEAAAAJ&amp;hl=en">Google Scholar</a> (Nov 2026)</p>
+        <svg class="cite-m" viewBox="0 0 320 230" role="img" aria-label="Citations: J1 more than 990; C3 more than 220; C2 more than 210; J2 more than 30; P1 patent more than 30.">
+          <!-- phone layout: label above bar; bar width = count/990 * 240 -->
+          <g font-size="13" fill="var(--ink-2)">
+            <text x="0" y="14">[J1] Enabling LIS w/ CS &amp; DL</text>
+            <text x="0" y="60">[C3] Deep RL for IRS</text>
+            <text x="0" y="106">[C2] DL for LIS (mmWave)</text>
+            <text x="0" y="152">[J2] mmWave depth maps</text>
+            <text x="0" y="198">[P1] Patent: LIS sensors</text>
+          </g>
+          <rect class="grow" x="0" y="20" width="240" height="18" rx="5" fill="var(--accent)"/>
+          <rect class="grow d2" x="0" y="66" width="53" height="18" rx="5" fill="var(--accent-2)"/>
+          <rect class="grow d3" x="0" y="112" width="51" height="18" rx="5" fill="var(--accent-2)" opacity=".8"/>
+          <rect class="grow d4" x="0" y="158" width="8" height="18" rx="4" fill="var(--accent-3)"/>
+          <rect class="grow d5" x="0" y="204" width="8" height="18" rx="4" fill="var(--accent-4)"/>
+          <g font-size="13" font-weight="700" fill="var(--ink)" font-family="JetBrains Mono, Consolas, monospace">
+            <text x="248" y="34">990+ ★</text>
+            <text x="61" y="80">220+</text>
+            <text x="59" y="126">210+</text>
+            <text x="16" y="172">30+</text>
+            <text x="16" y="218">30+</text>
+          </g>
+        </svg>
+        <svg class="cite-d" viewBox="0 0 640 176" role="img" aria-label="Citations: J1 Enabling Large Intelligent Surfaces, more than 990; C3 Deep RL for Intelligent Reflecting Surfaces, more than 220; C2 Deep Learning for Large Intelligent Surfaces, more than 210; J2 mmWave MIMO Sensing Depth Map, more than 30; P1 patent, more than 30.">
+          <!-- bar width = count/990 * 400, bars start at x=190 -->
+          <g font-size="12" fill="var(--ink-2)">
+            <text x="0" y="22">[J1] Enabling LIS w/ CS &amp; DL</text>
+            <text x="0" y="56">[C3] Deep RL for IRS</text>
+            <text x="0" y="90">[C2] DL for LIS (mmWave)</text>
+            <text x="0" y="124">[J2] mmWave depth maps</text>
+            <text x="0" y="158">[P1] Patent: LIS sensors</text>
+          </g>
+          <rect class="grow" x="190" y="8" width="400" height="20" rx="5" fill="var(--accent)"/>
+          <rect class="grow d2" x="190" y="42" width="89" height="20" rx="5" fill="var(--accent-2)"/>
+          <rect class="grow d3" x="190" y="76" width="85" height="20" rx="5" fill="var(--accent-2)" opacity=".8"/>
+          <rect class="grow d4" x="190" y="110" width="12" height="20" rx="4" fill="var(--accent-3)"/>
+          <rect class="grow d5" x="190" y="144" width="12" height="20" rx="4" fill="var(--accent-4)"/>
+          <g font-size="12" font-weight="700" fill="var(--ink)" font-family="JetBrains Mono, Consolas, monospace">
+            <text x="482" y="23" fill="#fff">990+ ★</text>
+            <text x="287" y="57">220+</text>
+            <text x="283" y="91">210+</text>
+            <text x="210" y="125">30+</text>
+            <text x="210" y="159">30+</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="pubgroup">Patents</div>
+      <ul class="pubs">
+        <li><span class="tag">P2–4</span><span>Inventor on three Qualcomm U.S. non-provisional patent applications (2024–2026).</span></li>
+        <li><span class="tag">P1</span><span>A. Alkhateeb, <b>A. Taha</b>, and M. Alrabeiah, “Large Intelligent Surfaces with Sparse Channel Sensors,” <span class="venue">U.S. Patent 11,728,571</span>, filed Jun. 15, 2020, granted Aug. 15, 2023. <span class="cite">30+ citations</span></span></li>
+      </ul>
+
+      <div class="pubgroup">Journal Articles</div>
+      <ul class="pubs">
+        <li><span class="tag">J3</span><span>U. Demirhan, <b>A. Taha</b>, S. Jiang, and A. Alkhateeb, “DeepVerse 6G: A Framework for Synthetic Multi-Modal Sensing and Communication Datasets,” <span class="venue">in preparation</span>.</span></li>
+        <li><span class="tag">J2</span><span><b>A. Taha</b>, Q. Qu, S. Alex, and A. Alkhateeb, “mmWave MIMO Sensing based Depth Map Estimation for Wireless Virtual and Augmented Reality,” <span class="venue">IEEE Access</span>, 2021. <span class="cite">30+ citations</span></span></li>
+        <li><span class="tag">J1</span><span><b>A. Taha</b>, M. Alrabeiah, and A. Alkhateeb, “Enabling Large Intelligent Surfaces with Compressive Sensing and Deep Learning,” <span class="venue">IEEE Access</span>, 2021. <span class="cite star">★ IEEE Access Editors’ Top 5 Articles for 2021</span> <span class="cite">990+ citations</span></span></li>
+      </ul>
+
+      <div class="pubgroup">Conference Papers</div>
+      <ul class="pubs">
+        <li><span class="tag">C6</span><span><b>A. Taha</b>, H. Luo, and A. Alkhateeb, “Reconfigurable Intelligent Surface Aided Wireless Sensing for Scene Depth Estimation,” <span class="venue">ICC</span>, 2023.</span></li>
+        <li><span class="tag">C5</span><span><b>A. Taha*</b>, H. Elkotby*, T. Haque, R. Pragada, and D. Castor, “Eliminating Battery Replacement Throughout the Useful Life of IoT Devices with Limited-Capacity Batteries: Analysis and Design of a Zero Energy Air Interface,” <span class="venue">ICC Workshops</span>, 2021.</span></li>
+        <li><span class="tag">C4</span><span><b>A. Taha</b> and A. Alkhateeb, “Situation-Aware Channel Covariance Prediction for Deep Learning Aided Massive MIMO Systems,” <span class="venue">ACSSC</span>, 2020.</span></li>
+        <li><span class="tag">C3</span><span><b>A. Taha</b>, Y. Zhang, F. Mismar, and A. Alkhateeb, “Deep Reinforcement Learning for Intelligent Reflecting Surfaces: Towards Standalone Operation,” <span class="venue">SPAWC</span>, 2020. <span class="cite">220+ citations</span></span></li>
+        <li><span class="tag">C2</span><span><b>A. Taha</b>, M. Alrabeiah, and A. Alkhateeb, “Deep Learning for Large Intelligent Surfaces in Millimeter Wave and Massive MIMO Systems,” <span class="venue">GLOBECOM</span>, 2019. <span class="cite">210+ citations</span></span></li>
+        <li><span class="tag">C1</span><span><b>A. A. H. Anis</b>, B. Abdelhamid, and S. Elramly, “Low Overhead Weighted-Graph-Coloring-Based Two-Layer Precoding for FDD Massive MIMO Systems,” <span class="venue">ICCCNT</span>, 2018.</span></li>
+      </ul>
+
+      <div class="pubgroup">Deep Learning Datasets</div>
+      <ul class="pubs">
+        <li><span class="tag">D2</span><span>U. Demirhan, <b>A. Taha</b>, S. Jiang, S. Daga, and A. Alkhateeb, “DeepVerse 6G: A Digital Twin Dataset for Wireless Communication and Sensing,” officially published in April 2025.</span></li>
+        <li><span class="tag">D1</span><span>U. Demirhan*, <b>A. Taha*</b>, and A. Alkhateeb, “DeepMIMO: A Generic Deep Learning Dataset for Millimeter Wave and Massive MIMO Applications,” officially published in April 2022.</span></li>
+      </ul>
+      <p class="note">* The first two authors contributed equally to the work.</p>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section aria-labelledby="h-skills">
+      <h2 id="h-skills"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>Technical Skills</h2>
+      <div class="skills">
+        <div class="k">Programming</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">C/C++</span></div>
+        <div class="k">Frameworks</div>
+        <div class="chips"><span class="chip">Wireless InSite</span><span class="chip">GNU Radio Companion</span><span class="chip">LabVIEW</span><span class="chip">Blender</span></div>
+        <div class="k">Hardware</div>
+        <div class="chips"><span class="chip">NI USRP</span><span class="chip">TI mmWave radar (AWR)</span></div>
+      </div>
+    </section>
+
+    <!-- ================= TEACHING ================= -->
+    <section aria-labelledby="h-teach">
+      <h2 id="h-teach"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l4-4 4 4"/></svg></span>Teaching Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Full-time Graduate Teaching Assistant</span> · <span class="entry-org">Ain Shams University, Cairo, Egypt</span></div>
+          <span class="when">Spring 2014 – Spring 2018</span>
+        </div>
+        <ul>
+          <li>Taught 25+ semester-long courses (10 distinct) over four years, including tutorials and labs for statistical signal processing, digital image processing, and signals and systems; tutorials for wireless and mobile communications; and labs for digital communications and machine learning.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= AWARDS ================= -->
+    <section aria-labelledby="h-awards">
+      <h2 id="h-awards"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg></span>Honors &amp; Awards</h2>
+      <div class="awards">
+        <div><b>Engineering Graduate Fellowship</b>, Arizona State University, USA.</div><div class="when">Apr 2023</div>
+        <div><b>IEEE Access Editors’ Top 5 Articles for 2021</b>, IEEE Access, for the article [J1].</div><div class="when">2021</div>
+        <div><b>Full-Tuition Research Assistantship</b>, Arizona State University, USA.</div><div class="when">Fall 2018 – Spring 2020,<br>Spring 2021 – Fall 2022</div>
+        <div><b>Full-Tuition Graduate Fellowship</b>, Ain Shams University, Egypt.</div><div class="when">Fall 2013 – Spring 2018</div>
+        <div><b>Egyptian Government Excellence Award</b>, Ministry of Higher Education, Egypt. B.S.E.E. valedictorian. Ranked first out of 300+ students across all Credit Hours Engineering Programs (CHEP), Class of 2013, Ain Shams University.</div><div class="when">Aug 2013</div>
+        <div><b>IAESTE Scholarship</b>, German Academic Exchange Service (DAAD), Germany.</div><div class="when">Summer 2012</div>
+        <div><b>Half-Tuition Undergraduate Scholarship</b>, Ain Shams University, Egypt.</div><div class="when">Fall 2010 – Spring 2013</div>
+      </div>
+    </section>
+
+    <!-- ================= COURSES ================= -->
+    <section aria-labelledby="h-courses">
+      <h2 id="h-courses"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg></span>Selected Courses</h2>
+      <div class="entry-head"><span class="entry-title">Arizona State University</span><span class="when">Tempe, AZ</span></div>
+      <div class="courses">
+        <ul><li>Advanced Topics in MIMO Wireless Communications</li><li>Optimization I</li><li>Random Signal Theory</li></ul>
+        <ul><li>Wireless Communications</li><li>Time-Frequency Signal Processing</li></ul>
+      </div>
+      <div class="entry-head" style="margin-top:12px"><span class="entry-title">Ain Shams University</span><span class="when">Cairo, Egypt</span></div>
+      <div class="courses">
+        <ul><li>Digital Signal Processing</li><li>Statistical Signal Processing</li><li>Digital Image Processing</li><li>Audio and Video Encoding</li><li>Data Networks</li><li>Network Security</li></ul>
+        <ul><li>Antenna Engineering and Propagation</li><li>Analog Communications</li><li>Digital Communications</li><li>Satellite Communications</li><li>Information Theory and Coding</li><li>Machine Learning</li></ul>
+      </div>
+    </section>
+
+    <!-- ================= ACTIVITIES ================= -->
+    <section aria-labelledby="h-svc">
+      <h2 id="h-svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0 0-6M21 20a6 6 0 0 0-4-5.6"/></svg></span>Professional Activities</h2>
+      <p style="margin:0 0 6px"><b>Technical Reviewer</b> (reviewed more than 40 publications) for IEEE publication venues:</p>
+      <div class="chips" style="margin-bottom:12px">
+        <span class="chip">Journal on Selected Areas in Communications</span><span class="chip">Transactions on Signal Processing</span><span class="chip">Transactions on Wireless Communications</span><span class="chip">Transactions on Communications</span><span class="chip">Transactions on Vehicular Technology</span><span class="chip">Open Journal of the Communications Society</span><span class="chip">Wireless Communications Letters</span><span class="chip">Communications Letters</span><span class="chip">Antennas and Wireless Propagation Letters</span><span class="chip">Global Communications Conference</span><span class="chip">Wireless Communications and Networking Conference</span><span class="chip">Vehicular Technology Conference</span>
+      </div>
+      <p style="margin:0"><b>Seminars and Workshops</b></p>
+      <ul>
+        <li><b>Poster Session:</b> “Deep Learning for Large Intelligent Surfaces in Millimeter Wave and Massive MIMO Systems,” Midwest Research Summit: Future Networks, organized by Huawei, Dallas, TX, USA, May 2019.</li>
+        <li><b>Workshop:</b> “Software Defined Radio using LabVIEW and NI-USRP,” Ain Shams University, Egypt, Feb. 2017.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="no-print">Updated November 12, 2026.</footer>
+</div>
+</body>
+</html>
