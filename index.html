@@ -219,10 +219,20 @@ footer{padding:14px 40px 22px;color:var(--ink-3);font-size:12px;border-top:1px s
   footer{display:none}
   a{color:inherit}
 }
+
+/* ---------- "full-page version" bar: shown only when the page is embedded (e.g. in Google Sites) ---------- */
+.fullpage{display:none}
+.framed .fullpage{display:flex;justify-content:flex-end;padding:10px 40px;background:var(--tile);border-bottom:1px solid var(--line);font-size:13.5px}
+.fullpage a{font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.fullpage svg{width:15px;height:15px}
+@media (max-width:720px){ .framed .fullpage{padding:10px 16px;justify-content:center} }
+@media print{ .framed .fullpage{display:none} }
 </style>
+<script>try{if(window.self!==window.top)document.documentElement.classList.add('framed')}catch(e){document.documentElement.classList.add('framed')}</script>
 </head>
 <body>
 <div class="page">
+  <div class="fullpage"><a href="https://abdelrahman-taha.github.io" target="_blank" rel="noopener">Open full-page version<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
 
   <!-- ================= HERO ================= -->
   <header class="hero">
@@ -613,7 +623,7 @@ footer{padding:14px 40px 22px;color:var(--ink-3);font-size:12px;border-top:1px s
     </section>
   </main>
 
-  <footer class="no-print">Updated November 12, 2026.</footer>
+  <footer class="no-print">Updated November 13, 2026.</footer>
 </div>
 </body>
 </html>
